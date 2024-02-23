@@ -17,12 +17,12 @@ import separate_vocals_instruments
 
 # recebe músicas de entrada, cria saídas das músicas separadas em vocal e instrumentos
 if __name__ == "__main__":
-    input_music1= "C:\Users\gabri\OneDrive\Documentos\GitHub\MultimidiaMashup\Audio\oração . a banda mais bonita da cidade (c⧸ leo fressato).wav" # Colocar o caminho pra música 1
-    input_music2 = "C:\Users\gabri\OneDrive\Documentos\GitHub\MultimidiaMashup\Audio\Banda do Mar - Mais Ninguém (Videoclipe).wav" # Colocar caminho pra música 2
+    input_music1= "" # Colocar o caminho pra música 1
+    input_music2 = "" # Colocar caminho pra música 2
     output_music1 = "/content/separateMusic1" # Cria pasta
     output_music2 = "/content/separateMusic2" # Cria pasta
 
-    separate_vocals_instruments(input_music1, input_music2, output_music1, output_music2)
+    separate_vocals_instruments(input_music1, output_music1, input_music2, output_music2)
 
 
 """# Juntar os sons usando Librosa (usar arquivos .wav)"""
@@ -31,8 +31,8 @@ import create_mashup
 
 # recebe duas entradas de áudio .wav e retorna o mashup
 if __name__ == "__main__":
-    file1 = "/content/separateMusic1/oração . a banda mais bonita da cidade (c⧸ leo fressato)/vocals.wav" #input q vai determinar a duração
-    file2 = "/content/separateMusic2/Banda do Mar - Mais Ninguém (Videoclipe)/accompaniment.wav"
+    file1 = "" #input q vai determinar a duração
+    file2 = ""
     output_file = "/content/mashup.wav"  # Exemplo de caminho de saída no Google Colab
 
     create_mashup(file1, file2, output_file)
