@@ -12,18 +12,10 @@ Original file is located at
    !pip install spleeter;
 """
 """# Separar os sons por meio do spleeter (usar arquivos .wav)"""
-import spleeter
-from spleeter.separator import Separator
 
-def separate_vocals_instruments(input_music1, input_music2, output_music1, output_music2): # Definir a função que vai separar os 2 inputs
-    separator = Separator('spleeter:2stems')
+import separate_vocals_instruments
 
-    # Separação dos vocais e melodia da música 1
-    separator.separate_to_file(input_music1, output_music1)
-
-    # Separação dos vocais e melodia da música 2
-    separator.separate_to_file(input_music2, output_music2)
-
+# recebe músicas de entrada, cria saídas das músicas separadas em vocal e instrumentos
 if __name__ == "__main__":
     input_music1= "C:\Users\gabri\OneDrive\Documentos\GitHub\MultimidiaMashup\Audio\oração . a banda mais bonita da cidade (c⧸ leo fressato).wav" # Colocar o caminho pra música 1
     input_music2 = "C:\Users\gabri\OneDrive\Documentos\GitHub\MultimidiaMashup\Audio\Banda do Mar - Mais Ninguém (Videoclipe).wav" # Colocar caminho pra música 2
@@ -32,29 +24,12 @@ if __name__ == "__main__":
 
     separate_vocals_instruments(input_music1, input_music2, output_music1, output_music2)
 
+
 """# Juntar os sons usando Librosa (usar arquivos .wav)"""
 
-import librosa
-import soundfile as sf
+import create_mashup
 
-# Função para criar o mashup
-def create_mashup(file1, file2, output_file):
-    # Carregar os arquivos de áudio
-    audio1, sr1 = librosa.load(file1, sr=None)
-    audio2, sr2 = librosa.load(file2, sr=None)
-
-    # Ajustar o tamanho dos áudios
-    min_length = min(len(audio1), len(audio2))
-    audio1 = audio1[:min_length]
-    audio2 = audio2[:min_length]
-
-    # Criar o mashup combinando os áudios
-    mashup = 0.5 * audio1 + 0.5 * audio2
-
-    # Salvar o mashup como um novo arquivo de áudio
-    sf.write(output_file, mashup, sr1)  # Usa a taxa de amostragem do primeiro arquivo
-
-# Exemplo de uso da função
+# recebe duas entradas de áudio .wav e retorna o mashup
 if __name__ == "__main__":
     file1 = "/content/separateMusic1/oração . a banda mais bonita da cidade (c⧸ leo fressato)/vocals.wav" #input q vai determinar a duração
     file2 = "/content/separateMusic2/Banda do Mar - Mais Ninguém (Videoclipe)/accompaniment.wav"
