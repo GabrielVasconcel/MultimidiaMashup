@@ -13,7 +13,7 @@ Original file is located at
 """
 """# Separar os sons por meio do spleeter (usar arquivos .wav)"""
 
-#hahah
+
 import separate_vocals_instruments
 
 # recebe músicas de entrada, cria saídas das músicas separadas em vocal e instrumentos
