@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import base64
-# from separate_vocals_instruments import separate_vocals_instruments
+from separate_vocals_instruments import separate_vocals_instruments
 
 @st.cache_data
 def get_img_as_base64(file):
@@ -10,13 +10,12 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 
-img = get_img_as_base64("tez.png")  
+img = get_img_as_base64("tela.png")  
 
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-#background-image: url("https://img.freepik.com/vetores-gratis/fundo-de-pentagrama-musical-brilhante-com-notas-sonoras_1017-31220.jpg");
-background-image: url("https://e1.pxfuel.com/desktop-wallpaper/166/548/desktop-wallpaper-night-phone-night-sky-mobile.jpg"); #definir imagem de fundo
+background-image: url("data:image/png;base64,{img}");
 background-size: 100%;
 background-position: top left;
 background-repeat: no-repeat;
