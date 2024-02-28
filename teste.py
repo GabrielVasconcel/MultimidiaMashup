@@ -54,9 +54,17 @@ def main():
     # Upload de arquivos .wav
     with col1:
         uploaded_file1 = st.file_uploader("Upload do arquivo .wav que desejas pegar os vocais", type="wav")
+        if(uploaded_file1 is not None):
+            vocal_file = open("input/vocal.wav", "wb")
+            vocal_file.write(uploaded_file1.getvalue())
+            vocal_file.close()
 
     with col2:
         uploaded_file2 = st.file_uploader("Upload do arquivo .wav que desejas pegar o instrumental", type="wav")
+        if(uploaded_file2 is not None):
+            instrumental_file = open("input/instrumental.wav", "wb")
+            instrumental_file.write(uploaded_file2.getvalue())
+            instrumental_file.close()
 
     # Primeiro painel download
     st.markdown("<h1 style='text-align: center; color: white;'>Faça o download abaixo dos arquivos que foram gerados</h1>", unsafe_allow_html=True)
@@ -83,10 +91,16 @@ def main():
 
     with col5:
         uploaded_file3 = st.file_uploader("Upload de arquivo .wav que desejas que seja os vocais do mashup", type="wav")
-
+        if(uploaded_file3 is not None):
+            vocal_file2 = open("input/vocal_mashup.wav", "wb")
+            vocal_file2.write(uploaded_file3.getvalue())
+            vocal_file2.close()
     with col6:
         uploaded_file4 = st.file_uploader("Upload de arquivo .wav que desejas que seja o instrumental do mashup", type="wav")
-
+        if(uploaded_file4 is not None):
+            instrumental_file2 = open("input/instrumental_mashup.wav", "wb")
+            instrumental_file2.write(uploaded_file4.getvalue())
+            instrumental_file2.close()
 
     # Segundo painel download
     st.markdown("<h1 style='text-align: center; color: white;'>Faça o download abaixo do mashup</h1>", unsafe_allow_html=True)
