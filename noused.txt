@@ -1,0 +1,4 @@
+# tensorflow==2.9.3
+# tensorflow-estimator==2.9.0
+# tensorflow-io-gcs-filesystem==0.31.0
+# scipy==1.12.0
