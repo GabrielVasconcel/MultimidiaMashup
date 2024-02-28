@@ -1,4 +1,4 @@
-import spleeter
+# import spleeter
 from spleeter.separator import Separator
 
 def separate_vocals_instruments(input_music1, output_music1, input_music2=None, output_music2=None): # Definir a função que vai separar os 2 inputs

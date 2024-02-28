@@ -18,17 +18,17 @@ page_bg_img = f"""
 #background-image: url("https://img.freepik.com/vetores-gratis/fundo-de-pentagrama-musical-brilhante-com-notas-sonoras_1017-31220.jpg");
 background-image: url("https://e1.pxfuel.com/desktop-wallpaper/166/548/desktop-wallpaper-night-phone-night-sky-mobile.jpg"); #definir imagem de fundo
 background-size: 100%;
-background-position: top left;
+background-position: center;
 background-repeat: no-repeat;
 background-attachment: local;
 }}
 
-[data-testid="stSidebar"] > div:first-child {{
-background-image: url("data:image/png;base64,{img}");
-background-position: center; 
-background-repeat: no-repeat;
-background-attachment: fixed;
-}}
+# [data-testid="stSidebar"] > div:first-child {{
+# background-image: url("data:image/png;base64,{img}");
+# background-position: center; 
+# background-repeat: no-repeat;
+# background-attachment: fixed;
+# }}
 
 [data-testid="stHeader"] {{
 background: rgba(0,0,0,0);
@@ -47,7 +47,7 @@ def main():
     st.markdown("<h1 style='text-align: center; color: white;'>BEM VINDO AO MASHUP CRAFT LAB</h1>", unsafe_allow_html=True)
 
     # Primeiro painel Upload
-    st.markdown("<h1 style='text-align: center; color: white;'>Insira abaixo os arquivos de música que você deseja separar</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: white;'>Insira abaixo os arquivos de música que você deseja separar</h2>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: center; color: white;'></h1>", unsafe_allow_html=True) #espaço
 
     col1, col2 = st.columns(2)
@@ -60,8 +60,8 @@ def main():
         uploaded_file2 = st.file_uploader("Upload do arquivo .wav que desejas pegar o instrumental", type="wav")
 
     # Primeiro painel download
-    st.markdown("<h1 style='text-align: center; color: white;'>Faça o download abaixo dos arquivos que foram gerados</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center; color: white;'></h1>", unsafe_allow_html=True) #espaço
+    st.markdown("<h2 style=' text-align: center; color: white;'>Faça o download abaixo dos arquivos gerados</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style=' color: white;'></h2>", unsafe_allow_html=True) #espaço
 
     col3, col4 = st.columns(2)
 
