@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, violet, cyan);
+    height: 100vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1.tittle {
+    text-align: center;
+    padding-top: 100px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.7);
+
+  }
+
+  .container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px 150px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 15px 30px;
+    /* Aumentando o padding */
+    margin: 0 20px;
+    /* Aumentando a margem */
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+  }
+
+  .upload-area,
+  .download-area {
+    margin-bottom: 20px;
+  }
+
+  .upload-area input[type="file"] {
+    display: none;
+  }
+
+  .upload-area label {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .download-area a {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    background-color: #2ecc71;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }
